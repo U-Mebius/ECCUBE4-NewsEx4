@@ -1,0 +1,22 @@
+{% set NewsList = repository('Eccube\\Entity\\News').getList() %}
+
+<div class="ec-role">
+    <div class="ec-newsRole">
+        <div class="ec-newsRole__news">
+            {% for News in NewsList %}
+                <div class="ec-newsRole__newsItem">
+                    <div class="ec-newsRole__newsHeading">
+                        <div class="ec-newsRole__newsDate">
+                            {{ News.publish_date|date_day }}
+                        </div>
+                        <div class="ec-newsRole__newsColumn">
+                            <div class="ec-newsRole__newsTitle">
+                                <a href="{{ url('plg_news_detail', {'id' : News.id}) }}">{{ News.title }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

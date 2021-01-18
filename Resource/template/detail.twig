@@ -1,0 +1,33 @@
+
+{% extends 'default_frame.twig' %}
+
+{% set body_class = 'news_page' %}
+
+{% block main %}
+    <div class="ec-role">
+        <div class="ec-newsRole">
+            <div class="ec-newsRole__news_etail">
+                    <div class="ec-newsRole__newsItem">
+                        <div class="ec-newsRole__newsHeading">
+                            <div class="ec-newsRole__newsDate">
+                                {{ News.publish_date|date_day }}
+                            </div>
+                            <div class="ec-newsRole__newsColumn">
+                                <div class="ec-newsRole__newsTitle">
+                                    {{ News.title }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ec-newsRole__newsDescription">
+                            {{ News.description|raw|nl2br }}
+                            {% if News.url %}
+                                <br>
+                                <a href="{{ News.url }}" {% if News.link_method == '1' %}target="_blank"{% endif %}>{{ 'front.block.news.see_details'|trans }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

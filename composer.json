@@ -1,0 +1,12 @@
+{
+  "name": "ec-cube/NewsEx4",
+  "version": "1.0.0",
+  "description": "NewsEx4",
+  "type": "eccube-plugin",
+  "require": {
+    "ec-cube/plugin-installer": "~0.0.7"
+  },
+  "extra": {
+    "code": "NewsEx4"
+  }
+}

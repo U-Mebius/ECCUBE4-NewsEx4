@@ -1,0 +1,16 @@
+<script src="{{ asset('assets/js/vendor/ckeditor/ckeditor.js', 'admin') }}"></script>
+<script>
+    $(function() {
+        var options = {
+            filebrowserUploadUrl: '{{ url('admin_product_form_upload_image') }}',
+            filebrowserUploadMethod: 'form',
+            image_previewText: '',
+            enterMode : CKEDITOR.ENTER_BR,
+            shiftEnterMode: CKEDITOR.ENTER_P,
+            allowedContent: true,
+            height: 500,
+        }
+
+        CKEDITOR.replace( 'admin_news[description]', options);
+    });
+</script>
