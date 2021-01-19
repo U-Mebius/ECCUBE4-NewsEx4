@@ -1,8 +1,8 @@
-<script src="{{ asset('assets/js/vendor/ckeditor/ckeditor.js', 'admin') }}"></script>
+<script src="{{ asset('NewsEx4/assets/ckeditor/ckeditor.js', 'plugin') }}"></script>
 <script>
     $(function() {
         var options = {
-            filebrowserUploadUrl: '{{ url('admin_product_form_upload_image') }}',
+            filebrowserUploadUrl: '{{ url('plugin_ckeditor_upload_image') }}',
             filebrowserUploadMethod: 'form',
             image_previewText: '',
             enterMode : CKEDITOR.ENTER_BR,
