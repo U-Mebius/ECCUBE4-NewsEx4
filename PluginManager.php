@@ -17,7 +17,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class PluginManager extends AbstractPluginManager
 {
     private $pages = [
-//        Resource/template/default
         [
             'name' => 'ニュース一覧',
             'url' => 'plg_news',
