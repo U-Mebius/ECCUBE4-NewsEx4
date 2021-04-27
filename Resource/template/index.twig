@@ -1,4 +1,12 @@
+{# This file is part of NewsEx4
 
+Copyright(c) U-Mebius Inc. All Rights Reserved.
+
+https://umebius.com/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
 {% extends 'default_frame.twig' %}
 
 {% set body_class = 'news_page' %}
@@ -6,6 +14,11 @@
 {% block main %}
 <div class="ec-role">
     <div class="ec-pagerRole">
+        {% if pagination.items|length %}
+            {% set startIndex = (pagination.currentPageNumber - 1) * pagination.numItemsPerPage + 1 %}
+            {% set endIndex = startIndex + pagination.items - 1 %}
+        <p>{{ startIndex }} 〜 {{ endIndex }}件 / {{ pagination.totalItemCount }}件中</p>
+        {% endif %}
         {% include "pager.twig" with {'pages': pagination.paginationData} %}
     </div>
 
